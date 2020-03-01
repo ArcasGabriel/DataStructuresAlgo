@@ -1,0 +1,11 @@
+D:\Projects\DataStructuresAlgo\obj\Debug\netcoreapp3.1\DataStructuresAlgo.csprojAssemblyReference.cache
+D:\Projects\DataStructuresAlgo\obj\Debug\netcoreapp3.1\DataStructuresAlgo.AssemblyInfoInputs.cache
+D:\Projects\DataStructuresAlgo\obj\Debug\netcoreapp3.1\DataStructuresAlgo.AssemblyInfo.cs
+D:\Projects\DataStructuresAlgo\bin\Debug\netcoreapp3.1\DataStructuresAlgo.exe
+D:\Projects\DataStructuresAlgo\bin\Debug\netcoreapp3.1\DataStructuresAlgo.deps.json
+D:\Projects\DataStructuresAlgo\bin\Debug\netcoreapp3.1\DataStructuresAlgo.runtimeconfig.json
+D:\Projects\DataStructuresAlgo\bin\Debug\netcoreapp3.1\DataStructuresAlgo.runtimeconfig.dev.json
+D:\Projects\DataStructuresAlgo\bin\Debug\netcoreapp3.1\DataStructuresAlgo.dll
+D:\Projects\DataStructuresAlgo\bin\Debug\netcoreapp3.1\DataStructuresAlgo.pdb
+D:\Projects\DataStructuresAlgo\obj\Debug\netcoreapp3.1\DataStructuresAlgo.dll
+D:\Projects\DataStructuresAlgo\obj\Debug\netcoreapp3.1\DataStructuresAlgo.pdb
