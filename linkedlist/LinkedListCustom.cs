@@ -141,6 +141,30 @@ namespace DataStructuresAlgo.linkedlist
             }
             return first_node.GetValue();
         }
+
+        public void print_middle() {
+            if (IsEmpty())
+            throw new ArgumentException();
+            var a = first;
+            var b = first;
+            while(b != last && b.GetNext() != last){
+                b = b.GetNext().GetNext();
+                a = a.GetNext();
+            }
+
+            if(b == last) {
+                System.Console.WriteLine("MIDDLE ELEMENT: {0}", a.GetValue());
+            }
+            else {
+                System.Console.WriteLine("MIDDLE ELEMENTS: {0} - {1}", a.GetValue(), a.GetNext().GetValue());
+            }
+
+
+
+
+
+            
+        }
         
     }
 }

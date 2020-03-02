@@ -12,8 +12,10 @@ namespace DataStructuresAlgo
             linkedlist_custom.addFirst(10);
             linkedlist_custom.addFirst(20);
             linkedlist_custom.addFirst(30);
+            linkedlist_custom.addFirst(40);
             linkedlist_custom.reverse();
             var item = linkedlist_custom.getKthNodeToEnd(2);
+            linkedlist_custom.print_middle();
 
 
         }
