@@ -9,7 +9,7 @@ namespace DataStructuresAlgo.linkedlist
             this.next = next;
         }
 
-        public NodeCustom GetNode(){
+        public NodeCustom GetNext(){
             return this.next;
         }
 

@@ -37,8 +37,8 @@ namespace DataStructuresAlgo.linkedlist
         public void deleteFirst() {
            if (IsEmpty())
             throw new IndexOutOfRangeException();
-           if (first != null && first.GetNode() != null) {
-            var new_first = first.GetNode();
+           if (first != null && first.GetNext() != null) {
+            var new_first = first.GetNext();
             first.SetNode(null);
             first = new_first;
            }
@@ -55,13 +55,13 @@ namespace DataStructuresAlgo.linkedlist
                 var current = first;
                 NodeCustom new_last = null;
                 while(new_last == null) {
-                    if (current.GetNode() == last) {
+                    if (current.GetNext() == last) {
                         new_last = current;
                         current.SetNode(null);
                         new_last.SetNode(null);
                         last = new_last;
                     }
-                    current = current.GetNode();
+                    current = current.GetNext();
                 }
             }
             else {
@@ -81,7 +81,7 @@ namespace DataStructuresAlgo.linkedlist
                 if(current.GetValue() == item) {
                     return index;
                 }
-                current = current.GetNode();
+                current = current.GetNext();
                 index++;
             }
             return -1;
@@ -101,7 +101,7 @@ namespace DataStructuresAlgo.linkedlist
             var current=first;
             while(current != null) {
                 new_array[index++] = current.GetValue();
-                current = current.GetNode();
+                current = current.GetNext();
             }
 
             return new_array;
@@ -109,7 +109,38 @@ namespace DataStructuresAlgo.linkedlist
 
         }
 
+        public void reverse() {
+            // [10 <- 20 <- 30]
+            //  p     c  n
+            //  n = c.next
+            //  p = c.next
+            var previous = first;
+            var current = first.GetNext();
+            while(current!=null){
+                var next = current.GetNext();
+                current.SetNode(previous);
+                previous = current;
+                current = next;
+            }
+            last = first;
+            last.SetNode(null);
+            first = previous;
+         }
 
+        public int getKthNodeToEnd(int k) {
+            if (IsEmpty()) 
+                throw new ArgumentException();
+            var first_node = first;
+            var second_node = first;
+            for (int i=0; i<k-1; i++) {
+                second_node = second_node.GetNext();
+            }
+            while(second_node != last) {
+                first_node = first_node.GetNext();
+                second_node = second_node.GetNext();
+            }
+            return first_node.GetValue();
+        }
         
     }
 }
