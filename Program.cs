@@ -8,6 +8,7 @@ using DataStructuresAlgo.reversestring;
 using DataStructuresAlgo.balancedexpressions;
 using DataStructuresAlgo.stack;
 using DataStructuresAlgo.StackQueue;
+using DataStructuresAlgo.priorityqueue;
 
 namespace DataStructuresAlgo
 {
@@ -15,12 +16,18 @@ namespace DataStructuresAlgo
     {
         static void Main(string[] args)
         {   
-            var stack_custom = new StackQueueCustom();
-            stack_custom.Enqueue(10);
-            stack_custom.Enqueue(20);
-            stack_custom.Enqueue(30);
-            stack_custom.Print();
+            var priority_queue = new PriorityQueue();
+            priority_queue.insert(1);
+            priority_queue.insert(3);
+            priority_queue.insert(5);
+            priority_queue.insert(2);
+            priority_queue.insert(7);
+            priority_queue.insert(8);
+            priority_queue.insert(9);
+            priority_queue.insert(6);
 
+
+             
 
         }
 

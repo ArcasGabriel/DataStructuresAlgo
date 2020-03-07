@@ -3,20 +3,25 @@ namespace DataStructuresAlgo.StackQueue
 {
     public class StackQueueCustom
     {
-        Stack<int> numbers = new Stack<int>();
-
+        Stack<int> enq = new Stack<int>();
+        Stack<int> deq = new Stack<int>();
         public void Enqueue(int item) {
-            numbers.Push(item);
+            enq.Push(item);
         }
-        // [10,20,30]
-        // 
-        public void Dequeue() {
-            var new_stack = new Stack<int>();
+        public int Dequeue() {
+            if (IsEmpty()) {
+                throw new System.ArgumentException();
+            }
+            if (deq.Count == 0) {
+                while(enq.Count > 0) {
+                    deq.Push(enq.Pop());
+                }
+            }
+            return deq.Pop();
         }
 
-        public void Print(){
-            foreach(var number in numbers)
-                System.Console.WriteLine(number);
+        public bool IsEmpty() {
+            return (enq.Count == 0 && deq.Count == 0);
         }
     }
 }
