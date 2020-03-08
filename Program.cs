@@ -16,19 +16,42 @@ namespace DataStructuresAlgo
     {
         static void Main(string[] args)
         {   
-            var priority_queue = new PriorityQueue();
-            priority_queue.insert(1);
-            priority_queue.insert(3);
-            priority_queue.insert(5);
-            priority_queue.insert(2);
-            priority_queue.insert(7);
-            priority_queue.insert(8);
-            priority_queue.insert(9);
-            priority_queue.insert(6);
 
+            var sentence = "green apple";
+            findFirstRepeteadWord(sentence);
 
+        }
+
+        public static void findFirstRepeteadWord(string sentence) {
+            var set = new HashSet<char>();
+            foreach(var item in sentence) {
+                if(set.Contains(item)) {
+                    System.Console.WriteLine("First repeated character is {0}", item);
+                    break;
+                }
+                set.Add(item);                
+            }
+        }
+
+        public static void findFirstWord(string sentence) {
+             var dictionary = new Dictionary<char,int>();
              
-
+             foreach(var item in sentence) {
+                 if(!(dictionary.ContainsKey(key: item))) {
+                 dictionary.Add(key: item,value:1);
+                 }
+                 else {
+                     var count = dictionary[item];
+                     dictionary.Remove(item);
+                     dictionary.Add(key:item, value:++count);
+                 }
+             }
+             foreach(var item in dictionary) {
+                 if (item.Value == 1) {
+                     System.Console.WriteLine("FIRST UNREPEATED WORD {0}", item);
+                     break;
+                 }
+             }   
         }
 
         public static void reverse(ref Queue<int> queue) {
