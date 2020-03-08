@@ -9,6 +9,7 @@ using DataStructuresAlgo.balancedexpressions;
 using DataStructuresAlgo.stack;
 using DataStructuresAlgo.StackQueue;
 using DataStructuresAlgo.priorityqueue;
+using DataStructuresAlgo.dictionary;
 
 namespace DataStructuresAlgo
 {
@@ -16,10 +17,12 @@ namespace DataStructuresAlgo
     {
         static void Main(string[] args)
         {   
-
-            var sentence = "green apple";
-            findFirstRepeteadWord(sentence);
-
+            var new_dict = new DictionaryCustom();
+            new_dict.Put(1,"Aladin");
+            new_dict.Put(2,"Marian");
+            new_dict.Put(132131, "Dorian");
+            new_dict.Put(1,"Marinel");
+            System.Console.WriteLine(new_dict.Get(132131));
         }
 
         public static void findFirstRepeteadWord(string sentence) {
