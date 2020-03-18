@@ -1,3 +1,6 @@
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
 using System;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
@@ -91,11 +94,8 @@ namespace DataStructuresAlgo.binarytree
         }
 
         private int height(Node root) {
-            if(root == null) {
-                return -1;
-            }
-            if(isLeaf(root))
-                return root.value;
+            if(isLeaf(root) || root == null)
+                return 0;
             return 1 + Math.Max(height(root.leftChild),height(root.rightChild));
         }
 
@@ -147,6 +147,37 @@ namespace DataStructuresAlgo.binarytree
             if(node.value < min || node.value > max)
                 return false;
             return ValidateBinarySerach(node.leftChild, min, max: node.value - 1) && ValidateBinarySerach(node.rightChild, min: node.value+1, max);
+        }
+
+        public List<int> KDistanceNode(int distance) {
+            var array = new List<int>();
+            KDistanceNode(root, distance, ref array);
+            return array;
+        }
+
+        private void KDistanceNode(Node node, int distance, ref List<int> list) {
+            if (node == null) {
+                return;
+            }
+            if(distance == 0) {
+                // System.Console.WriteLine("Root node of the distance is: {0}",node.value);
+                list.Add(node.value);
+            }
+            KDistanceNode(node.leftChild, distance - 1, ref list);
+            KDistanceNode(node.rightChild, distance - 1, ref list);
+        }
+
+
+        public void PrintLevelTraversal()  {
+            PrintLevelTraversal(root);
+        }
+
+        private void PrintLevelTraversal(Node node) {
+            for(int i=0; i<=height();i++) {
+                foreach(var item in KDistanceNode(i)) {
+                    System.Console.WriteLine(item);
+                }
+            }
         }
     }
         

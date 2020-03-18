@@ -11,6 +11,7 @@ using DataStructuresAlgo.StackQueue;
 using DataStructuresAlgo.priorityqueue;
 using DataStructuresAlgo.dictionary;
 using DataStructuresAlgo.binarytree;
+using DataStructuresAlgo.avltrees;
 
 namespace DataStructuresAlgo
 {
@@ -18,15 +19,11 @@ namespace DataStructuresAlgo
     {
         static void Main(string[] args)
         {   
-            var binarytree = new TreeCustom();
-            binarytree.insert(7);
-            binarytree.insert(4);
-            binarytree.insert(9);
-            binarytree.insert(1);
-            binarytree.insert(6);
-            binarytree.insert(8);
+            var binarytree = new AVLTree();
             binarytree.insert(10);
-            System.Console.WriteLine(binarytree.ValidateBinary());
+                        binarytree.insert(30);
+            binarytree.insert(20);
+
         }
 
         public static void findFirstRepeteadWord(string sentence) {
