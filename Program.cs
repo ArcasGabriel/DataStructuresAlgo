@@ -13,6 +13,7 @@ using DataStructuresAlgo.dictionary;
 using DataStructuresAlgo.binarytree;
 using DataStructuresAlgo.avltrees;
 using DataStructuresAlgo.heaps;
+using DataStructuresAlgo.sorting;
 
 namespace DataStructuresAlgo
 {
@@ -20,13 +21,12 @@ namespace DataStructuresAlgo
     {
         static void Main(string[] args)
         {   
-            var heap = new CustomHeap();
-            heap.insert(10);
-            heap.insert(5);
-            heap.insert(17);
-            heap.insert(4);
-            heap.insert(22);
-            heap.delete();
+            var sorter = new InsertionSort();
+            var numbers = new int[6] {8,2,4,1,3,10};
+            sorter.sort(numbers);
+            foreach(var item in numbers) {
+                System.Console.WriteLine(item);
+            }
         }
 
         public static void findFirstRepeteadWord(string sentence) {
