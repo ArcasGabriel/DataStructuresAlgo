@@ -14,6 +14,7 @@ using DataStructuresAlgo.binarytree;
 using DataStructuresAlgo.avltrees;
 using DataStructuresAlgo.heaps;
 using DataStructuresAlgo.sorting;
+using DataStructuresAlgo.searching;
 
 namespace DataStructuresAlgo
 {
@@ -23,10 +24,13 @@ namespace DataStructuresAlgo
         {   
             var sorter = new InsertionSort();
             var numbers = new int[6] {8,2,4,1,3,10};
-            sorter.sort(numbers);
-            foreach(var item in numbers) {
-                System.Console.WriteLine(item);
-            }
+            var numbers_unsorted = new int[6] {8,2,4,1,3,10};
+            // Do binary searching on sorted array
+            var searching = new BinarySearch();
+            var found_at_index = searching.Search(10,sorter.sort(numbers));
+            // Do linear searching on unsorted array
+            var linear_searching = new LinearSearch(numbers_unsorted);
+            var found_at_index_linear = linear_searching.Searching(10);
         }
 
         public static void findFirstRepeteadWord(string sentence) {
